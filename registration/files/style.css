@@ -1,0 +1,202 @@
+/* Just during developemnt, debugging and testing */
+/* * {
+    border: 1px solid black;
+} */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #a3f7bf, #ffb3e6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+}
+
+.form-container h2 {
+    color: #002b7f;
+    margin-bottom: 20px;
+}
+
+/* Input container for floating labels */
+.input-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-container input,
+.input-container select {
+    width: calc(100% - 1px); /* Adjust width to match container */
+    padding: 12px 40px 12px 12px; /* Padding for icon spacing */
+    border-radius: 4px;
+    border: 2px solid #ccc;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.input-container input:focus {
+    border-color: #0071c7; /* Change border color on focus */
+}
+
+.input-container label {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    color: #aaa;
+    font-size: 16px;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.input-container input:focus + label,
+.input-container input:not(:placeholder-shown) + label {
+    top: -1px;
+    left: -5px;
+    font-size: 12px;
+    color: #0071c7;
+    background-color: #fff;
+    padding: 0 4px;
+}
+
+.input-container .input-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #0071c7;
+    cursor: pointer; /* Adds pointer cursor on hover */
+}
+
+.input-container .input-icon:hover {
+    cursor: pointer; /* Ensures pointer cursor on hover */
+}
+
+/* Button styling remains the same */
+.form-container button {
+    width: calc(100% - 1px);
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #0071c7;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.form-container button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120px;
+    width: 100px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: skewX(-45deg);
+    transition: left 0.5s ease;
+}
+
+.form-container button:hover::before {
+    left: 100%;
+}
+
+.form-container button:hover {
+    background-color: #005ba1;
+    transform: translateY(-3px);
+}
+
+.form-container button:active {
+    background-color: #004080;
+    transform: translateY(0);
+}
+
+@media screen and (max-width: 480px) {
+    .form-container {
+        padding: 20px;
+    }
+
+    .form-container input {
+        width: calc(100% - 9px);
+    }
+
+    .form-container button {
+        font-size: 15px;
+    }
+}
+
+/* Hide browser's default eye icon in password fields  */
+input[type="password"]::-ms-reveal, 
+input[type="password"]::-ms-clear, 
+input[type="password"]::-webkit-clear-button, 
+input[type="password"]::-webkit-inner-spin-button, 
+input[type="password"]::-webkit-outer-spin-button {
+    display: none;
+}
+
+
+/* progress slider css code (Inserted By Aayush) */
+.flexbox {
+    display: flex;
+    justify-content: center;
+    height: 22px;
+}
+
+.slider-progress span.dot {
+    height: 10px;
+    width: 10px;
+    background-color: #ddd;
+    border:0;
+    border-radius: 50%;
+    margin: auto 6px;
+    transition: 1s;
+    cursor: pointer;
+    /* border: 5px solid rgba(255, 255, 255, 1); */
+}
+
+.slider-progress span.active,
+.slider-progress span.passed {
+    background-color: blue;
+}
+
+.slider-progress span.active {
+    border: 5px solid lightBlue;
+}
+
+.slider-progress span {
+    color: blue;
+    font-size:0.75em;
+}
+
+#page2, #page3, #btn2, #btn3 {
+    display:none;
+}
+
+select {
+    color: #8b8b8b;
+}
+
+select option,
+select:focus {
+    color: black;
+}
+
+

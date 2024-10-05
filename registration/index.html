@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="files/style.css">
+    <script src="files/main.js"></script>
+</head>
+<body> 
+ 
+    <div class="form-container">
+        <h2>Welcome to acadBuzz</h2>
+        
+        <div id="page1">
+            <!-- Username Input -->
+            <div class="input-container">
+                <input type="text" id="username" placeholder=" " required>
+                <label for="username">Create a Username</label>
+                <span class="input-icon">&#128100;</span> <!-- User Icon -->
+            </div>
+
+            <!-- Password Input -->
+            <div class="input-container">
+                <input type="password" id="password" placeholder=" " required>
+                <label for="password">Create a Password</label>
+                <span class="input-icon" id="togglePassword" onclick="togglePasswordVisibility('password', this.id)">&#128274;</span> <!-- Lock Icon -->
+            </div>
+        </div>
+
+
+        <div id="page2">
+            <!-- Username Input -->
+            <div class="input-container">
+                <!-- <input type="text" id="sQ" placeholder=" " required> -->
+                <select id="sQ" required>
+                    <option selected disabled>Select your security question</option>◘
+                    <option>What is your pet name?</option>
+                    <option>What is your favourite movie? </option>
+                    <option>What is name of your best childhood friend?</option>
+                </select>
+                <!-- <label for="sQ">Security Question</label> -->
+                <span class="input-icon">&#x2753; &nbsp;</span> <!-- User Icon -->
+            </div>
+ 
+            <!-- Password Input -->
+            <div class="input-container">
+                <input type="password" id="sA" placeholder=" " required>
+                <label for="sA">Write your security answer</label>
+                <span class="input-icon" id="togglePassword2" onclick="togglePasswordVisibility('sA', this.id)">&#128274;</span> <!-- Lock Icon -->
+            </div>
+        </div>
+
+        <div id="page3">
+
+            <!-- Name Input -->
+            <div class="input-container">
+                <input type="text" id="name" placeholder=" " required>
+                <label for="name">Your Full Name</label>
+                <span class="input-icon">&#128100;</span>
+            </div>
+
+            <!-- Email Input -->
+            <div class="input-container">
+                <input type="email" id="email" placeholder=" " required>
+                <label for="email">Your Email</label>
+                <span class="input-icon">&#x2709;</span> 
+            </div>
+
+            <!-- college Input -->
+            <div class="input-container">
+                <!-- <input type="text" id="username" placeholder=" " required> -->
+                <select id="clgName" required>
+                    <option selected disabled>Select your College</option>
+                    <option>college 1</option>
+                    <option>college 2</option>
+                    <option>college 3</option>
+                </select>
+                <!-- <label for="username">College Name</label> -->
+                <span class="input-icon">&#x1F3EB &nbsp;</span> <!-- User Icon -->
+            </div>
+
+        </div>
+
+
+        <div class="slider-progress">
+            <div class="flexbox">
+                <span class="dot active" id="dot1"></span>
+                <span class="dot" id="dot2"></span>
+                <span class="dot" id="dot3"></span>
+            </div>
+            <span id="caption">
+                <strong>Step 1 of 3: </strong>
+                Create your username and password</span>
+        </div>
+
+        <!-- Btn for page 1 -->
+        <button type="button" onclick="slideNext(2)" id="btn1">Next</button>
+        
+        <!-- Button for page 2 -->
+        <button type="button" onclick="slideNext(3)" id="btn2">Next</button>
+        
+        <!-- Btn for page 3 (final page: Submit) -->
+        <button type="button" onclick="handleLogin()" id="btn3">Register</button>
+    
+    </div>
+
+
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Homepage</title>
+    <link rel="stylesheet" href="homestyles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#"><img src="logo-url.png" alt="Site Logo" class="site-logo"></a>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">How It Works</a></li>
+                <li><a href="#" class="contact-button">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-text">
+                <h1>Want to know more about your <span>College?</span></h1>
+                <p class="subheading">The One-Stop Solution for all your College Hustles...</p>
+                <p class="description">Welcome to your own personal space website, where you can easily manage your day-to-day tasks, projects and timings for any activities happening in your college. Not only that, you can also keep a track on your daily and monthly expenses easily so that finance management will be easier for you. Apart from them, you are free to request for any features that would make your college life hassle-free.</p>
+            </div>
+            <div class="login-form">
+                <h2>Good To See You Again!!</h2>
+                <form action="#">
+                    <label for="email">E-mail <span class="required-asterisk">*</span></label>
+                    <input type="email" id="email" placeholder="Enter your E-mail I'd" required>
+                    
+                    <label for="password">Password <span class="required-asterisk">*</span></label>
+                    <input type="password" id="password" placeholder="Enter your Password" required>
+                    
+                    <div class="dropdown-container">
+                        <label for="college">College <span class="required-asterisk">*</span></label>
+                        <input type="text" id="college" list="colleges" placeholder="Select or type your College" required>
+                        <datalist id="colleges">
+                            <option value="College 1">
+                            <option value="College 2">
+                            <option value="College 3">
+                            <!-- Add more options -->
+                        </datalist>
+                    </div>
+                
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember">
+                        <label for="remember">Remember me</label>
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                    </div>
+                    
+                    <button type="submit" class="login-button">Login</button>
+                </form>               
+                <p class="signup">Don't have an account? <a href="#">Sign Up</a></p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
