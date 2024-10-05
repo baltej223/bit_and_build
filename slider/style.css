@@ -49,3 +49,52 @@ body {
     height: 76vh;
     left: 90%;
 }
+
+.slider span.btn-slider {
+    position: absolute;
+    top: 48vh;
+    background-color: rgba(255, 255, 255, 0.75);
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 8px rgba(0,0,0,0.6);
+}
+
+.slider span#btn_left {
+    left: 12%;
+}
+
+.slider span#btn_right {
+    left: 85.5%;
+}
+
+/* On LEFT BUTTON click or left direction */
+
+@keyframes middle-image-moves-to-left {
+    0% {
+        left: 10%;
+        height: 100vh;
+        top: 0;
+        width: 80%;
+        opacity: 1;
+    }
+
+    50% {
+        left: -700px;
+        top: 12vh;
+        height: 76vh;
+        opacity: 0.6;
+    }
+
+    100% {
+        left: -700px;
+        top: 12vh;
+        height: 76vh;
+        opacity: 0;
+    }
+}
