@@ -72,3 +72,62 @@ function slide(dir = "right", animation = true) {
     }
 }
 
+function goTo(imgIndex) {
+    mainCount = parseInt(imgIndex);
+
+    position.left = img_array[rectify(mainCount - 1)];
+    position.middle = img_array[rectify(mainCount)];
+    position.right = img_array[rectify(mainCount + 1)];
+
+    // refresh the dots (which is active or not)
+    refreshDots();
+
+    // alert(document.getElementById("right").src)
+
+    initiateSlider();
+}
+
+function refreshDots() {
+    //make all the other dots normal sized
+    img_array.forEach((val, index) => {
+        document.getElementById("dot" + index).classList.remove("activeDot");
+    })
+
+    // make the dot bigger which is active
+    document.getElementById("dot" + rectify(mainCount)).classList.add("activeDot");
+}
+
+function rectify(countName) {
+    // Basically making a straight array index to round index so that it becomes a loop. And index never become neagtive or more than array index.
+    while (countName < 0) {
+        countName += img_array.length;
+    }
+    while (countName >= img_array.length) {
+        countName -= img_array.length;
+    }
+    return countName;
+}
+
+$(document).on('swipeleft', 'img', function() { 
+    slide();
+});
+
+$(document).on('swiperight', 'img', function() { 
+    slide('left');
+});
+
+// document.addEventListener('wheel', function () {
+//     slide();
+// });
+
+
+
+
+
+
+
+
+initiateSlider();
+makeDotsSlider();
+refreshDots();
+// setInterval(slide, 3000)
