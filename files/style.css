@@ -1,0 +1,74 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.p{
+    display: flex;
+    flex-direction: column;
+}
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+    font-weight: 700;
+    width: 100%;
+    background: rgb(225, 225, 225);
+    height: 50px;
+}
+.main{
+    display: flex;
+    flex-direction: row;
+    
+}
+.aside{
+    width: 12svw;
+    padding-top: 10px;
+    position: fixed;
+    top: 60px;
+    left: 0px;
+    overflow-y:scroll;
+    height: 100svh;
+    background-color: white;
+}
+.asidebutton{
+    background: transparent;
+    position: relative;
+    width: 100%;
+    outline: none;
+    border: none;
+}
+
+.btn_white {
+  background-color: #f8f9fa;
+  border: 1px solid #f8f9fa;
+  border-radius: 10px;
+  color: #3c4043;
+  cursor: pointer;
+  font-family: arial,sans-serif;
+  font-size: 14px;
+  height: 36px;
+  line-height: 27px;
+  min-width: 54px;
+  padding: 0 16px;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: pre;
+  transition: border-color 0.3s;
+}
+
+.btn_white:hover {
+  border-color: #dadce0;
+  box-shadow: rgba(0, 0, 0, .1) 0 1px 1px;
+  color: #202124;
+}
+
+.btn_white:focus {
+  border-color: #4285f4;
+  outline: none;
+}
+.asidehr{
+    opacity: 0.4;
+    padding: 4px 0px 4px 0px;
+}
