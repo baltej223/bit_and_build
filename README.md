@@ -2,7 +2,7 @@
 
 ## Members:
 - [Baltej Singh](https://github.com/baltej223)
-- [Jaiveer Singh](https://github.com/jaiveer077)
+- [Harshjyot Kaur](https://github.com/MAHI21-WEB)
 - [Jatin Garg](https://github.com/jatinGa)
 - [Prince Sharma](https://github.com/TANICE-GAWD)
 
