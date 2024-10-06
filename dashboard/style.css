@@ -1,0 +1,413 @@
+/* General Reset */
+* {
+    padding: 0;
+    user-select: none;
+    list-style-type: none;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Container */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+:root {
+    --sideBarWidth: clamp(50px, 5vw, 150px);
+    --green: #cffbe3;
+    --grey: #d9d9d9;
+    --darkGreen: #1eb279;
+    --sideBarExpansionInMobile: 50vw;
+    --sideBarExpansionInPC: 20vw;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: var(--sideBarWidth);
+    position: fixed;
+    height: 100vh;
+    align-items: center;
+    background: var(--green);
+    box-shadow: 5px 0 5px var(--grey);
+    /* animation: 1s ease slideIn; */
+    transition: 0.5s;
+}
+
+.sideBar:hover {
+    width: var(--sideBarExpansionInPC);
+    background-color: #88f2bd;
+    backdrop-filter: blur(6px);
+    transition: 2s;
+    z-index: 1;
+    animation: 0.7s ease-in slideIn;
+}
+
+.sideBar .profilePic img {
+    height: 2.4em;
+    width: 2.4em;
+    border-radius: 50%;
+}
+
+@keyframes slideIn {
+    from {
+        width: var(--sideBarWidth);
+    }
+
+    to {
+        width: var(--sideBarExpansionInPC);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        width: var(sideBarExpansionInPC);
+    }
+
+    to {
+        width: var(--sideBarWidth);
+    }
+}
+
+.sideBar .profilePic {
+    width: var(--sideBarWidth);
+    height: var(--sideBarWidth);
+    border-radius: 50%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar div {
+    width: 40px;
+    height: 40px;
+    margin: 10px 0;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.sideBar .menu {
+    width: var(--sideBarWidth);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.sideBar:hover .menu {
+    width: var(--sideBarExpansionInPC);
+}
+
+@media screen and (max-width: 800px) {
+    .sideBar:hover {
+        width: 50vw;
+        transition: 2s;
+        z-index: 1;
+        animation: 0.7s ease-in slideIn;
+    }
+
+    .sideBar:hover .menu {
+        width: var(--sideBarExpansionInMobile);
+    }
+
+    @keyframes slideIn {
+        from {
+            width: var(--sideBarWidth);
+        }
+
+        to {
+            width: var(--sideBarExpansionInMobile);
+        }
+    }
+
+    @keyframes slideOut {
+        from {
+            width: var(sideBarExpansionInMobile);
+        }
+
+        to {
+            width: var(--sideBarWidth);
+        }
+    }
+}
+
+.sideBar a {
+    cursor: default;
+    margin: 0.3em 0;
+}
+
+.sideBar .menu .option {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    color: black;
+}
+
+
+.sideBar:hover .menu .option {
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+span.option-name {
+margin: 10px;
+margin-left: 0;
+padding: 4px 0.7rem;
+border-radius: 1rem;
+font-size: 1.2rem;
+transition: 0.5s;
+display: none;
+}
+
+span.option-name:hover {
+margin: 10px;
+font-size: 1.29rem;
+/* border-bottom: 2px solid rgb(0, 116, 15); */
+box-shadow: inset 0px -3px 20px 0px rgba(3, 185, 27, 0.8);
+animation: 2s linear borderAnimation;
+transition: 0.45s;
+mix-blend-mode: hard-light;
+}
+
+@keyframes borderAnimation {
+from {
+    box-shadow: outset 0px 10px 20px 0px rgba(0, 97, 13, 0.8);
+} to {
+    box-shadow: inset 0px -3px 20px 0px rgba(2, 161, 24, 0.8);
+}
+}
+
+/* .sideBar .menu .option i:hover {
+margin-right: 30px;
+} */
+
+@keyframes displayNameAnimation {
+0% {
+    text-shadow: 0 6px 3px rgba(211, 211, 211, 0);
+} 50% {
+    text-shadow: 0 6px 6px rgb(20, 235, 20);
+} 100% {
+    text-shadow: 0 6px 3px rgba(211, 211, 211, 0);
+}
+}
+@keyframes removeNameAnim {
+from {
+    opacity: 1;
+} to {
+    opacity: 0;
+}
+}
+
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 25px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.319);
+    padding: 5px 20px;
+    width: 700px;
+    border-color: #00a962;
+    border-style: solid;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    flex: 1;
+    font-size: 20px;
+}
+
+.search-bar button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+
+
+.menu-icons {
+    display: flex;
+    align-items: center;
+}
+
+.menu-icons .grid-icon,
+.menu-icons .site-name {
+    margin-left: 20px;
+}
+
+.menu-icons .site-name {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+}
+
+/* Content Area */
+.content-area {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    flex: 1;
+    height: 200px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+}
+
+.lists {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.list-item {
+    height: 60px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+}
+
+/* Updated Floating Button */
+.floating-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #a8e6cf, #00a667);
+    color: #fff;
+    border-color: #003500;
+    border-style: solid;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    font-size: 35px;
+    cursor: pointer;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2), 
+                inset 0 2px 4px rgba(255, 255, 255, 0.5); /* Shadow to give depth */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.floating-button::before {
+    content: '+';
+    font-size: 40px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover effect for more interactivity */
+.floating-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 14px rgba(0, 0, 0, 0.3),
+                inset 0 3px 5px rgba(255, 255, 255, 0.6); /* Enhanced shadow on hover */
+}
+
+
+
+/* for the 9-dot pattern */
+.grid-icon {
+    display: grid;
+    grid-template-columns: repeat(3, 10px);
+    grid-gap: 5px;
+    padding: 5px;
+    position: relative;
+    transition: opacity 0.5s ease; /* Slow fade-out */
+}
+
+.grid-icon .dot {
+    width: 10px;
+    height: 10px;
+    background-color: #7f7f7f;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Floating terminal styling */
+.floating-terminal {
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 40px; /* Positioned below the 9-dot pattern */
+    left: 1225px;
+    right: 0;
+    width: 240px; 
+    background-color: #1a1a1a; 
+    border-radius: 5px; 
+    padding: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(-10px); /* Start position for dropdown */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+/* Grid blocks inside the floating terminal */
+.grid-block {
+    width: 60px;
+    height: 60px;
+    background-color: #333;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.grid-block img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.grid-block:hover {
+    transform: scale(1.05); /* Slightly increase size on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+}
+
+/* Show the floating terminal when hovering over the grid icon */
+.grid-icon:hover + .floating-terminal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Space between blocks */
+}
+
