@@ -8,6 +8,7 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
+    height: 100svh;
 }
 
 header {
@@ -86,6 +87,12 @@ footer {
     background-color: #f4f4f4;
     padding: 1rem;
     text-align: center;
+    /* addednew */
+    position: fixed;
+    top:88svh;
+    left: 0;
+    width: 100svw;
+    /* at 5:46 06-10-2024 by baltej singh*/
 }
 
 footer nav {
