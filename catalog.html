@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog - Acme Bookstore</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">📚 Acme Bookstore</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="catalog.html">Catalog</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Book Catalog</h1>
+        <form class="search-form">
+            <input type="text" id="search" placeholder="Search books...">
+            <button type="submit">Search</button>
+        </form>
+
+        <div class="book-grid" id="bookGrid">
+            <!-- Books will be dynamically added here -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Acme Bookstore. All rights reserved.</p>
+        <nav>
+            <a href="#">Terms of Service</a>
+            <a href="#">Privacy Policy</a>
+        </nav>
+    </footer>
+
+    <script src="catalog.js"></script>
+</body>
+</html>
